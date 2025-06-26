@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 프로젝트 구조 가이드
+
+이 프로젝트는 여러 서비스와 공통 모듈로 구성된 모노레포(monorepo)입니다.
+
+- [packages/core](mdc:packages/core): 핵심 비즈니스 로직 및 공통 코드가 위치합니다.
+- [packages/infrastructure](mdc:packages/infrastructure): 인프라 관련 코드(예: docker, nginx 설정 등)가 위치합니다.
+- [packages/services/nerf-service](mdc:packages/services/nerf-service): NeRF 관련 API, Python inference, Web 프론트엔드가 포함된 서비스입니다.
+  - [api](mdc:packages/services/nerf-service/api): NestJS 기반 백엔드 API 서버
+  - [nerf](mdc:packages/services/nerf-service/nerf): Python 기반 NeRF 추론 및 학습 코드
+  - [web](mdc:packages/services/nerf-service/web): React 기반 프론트엔드
+- [packages/services/playground](mdc:packages/services/playground): Playground 서비스(API, Web) 코드
+- [packages/shared](mdc:packages/shared): 여러 서비스에서 공통으로 사용하는 코드
+- [docker-compose.yml](mdc:docker-compose.yml): 전체 서비스의 컨테이너 오케스트레이션 설정 파일
+- [README.md](mdc:README.md): 프로젝트 전반에 대한 설명 파일
+
+각 서비스는 독립적으로 개발 및 배포가 가능하며, 공통 모듈을 통해 코드 중복을 최소화합니다.
+
