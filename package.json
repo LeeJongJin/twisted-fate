@@ -6,6 +6,8 @@
     "packages/*"
   ],
   "scripts": {
+    "export:extensions": "node environment/export-extensions.js",
+    "setup:extensions": "node environment/setup-extensions.js",
     "dev:web": "npm run dev --workspace=@twisted-fate/playground-web",
     "dev:api": "npm run start:dev --workspace=@twisted-fate/playground-api",
     "build:web": "npm run build --workspace=@twisted-fate/playground-web",
